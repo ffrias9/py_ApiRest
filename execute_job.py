@@ -19,6 +19,7 @@ def execute_job(url, user, password, id_job, id_credential):
     else:
         payload = {"extra_vars": {}, "credentials": [id_credential]}
 
+    print(url, auth, payload)
     result = requests.post(url, auth=auth, json=payload)
 
     if result.status_code == 201:
